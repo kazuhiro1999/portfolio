@@ -152,6 +152,21 @@
             font-weight: 500;
         }
 
+        .skill-rating {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .star {
+            font-size: 1.2rem;
+            color: #ffd700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .star.empty {
+            color: #ddd;
+        }
+
         .highlight {
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
@@ -224,23 +239,93 @@
                     <div class="row g-4">
                         <div class="col-lg-4">
                             <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">AI・機械学習</div>
+                                <div class="category-title mb-3">プログラミング言語</div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
                                     <span class="skill-name">Python</span>
-                                    <span class="skill-experience">7年</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">TensorFlow</span>
-                                    <span class="skill-experience">4年</span>
+                                    <span class="skill-name">C#</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">HTML/CSS</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="skill-category p-4 h-100">
+                                <div class="category-title mb-3">機械学習</div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">Tensorflow</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">Numpy,Matplotlib</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
                                     <span class="skill-name">OpenCV</span>
-                                    <span class="skill-experience">4年</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Linux</span>
-                                    <span class="skill-experience">実用レベル</span>
-                                </div>
+                                    <span class="skill-name">scikit-learn</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
 
@@ -249,15 +334,43 @@
                                 <div class="category-title mb-3">XR・アプリ開発</div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
                                     <span class="skill-name">Unity</span>
-                                    <span class="skill-experience">7年</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">C#</span>
-                                    <span class="skill-experience">7年</span>
+                                    <span class="skill-name">OpenXR/SteamVR</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Raspberry Pi</span>
-                                    <span class="skill-experience">3年</span>
+                                    <span class="skill-name">Photon</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">WebXR</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -266,20 +379,126 @@
                             <div class="skill-category p-4 h-100">
                                 <div class="category-title mb-3">Web・インフラ</div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">HTML/CSS</span>
-                                    <span class="skill-experience">2年</span>
+                                    <span class="skill-name">Flask</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">JavaScript</span>
-                                    <span class="skill-experience">2年</span>
+                                    <span class="skill-name">Linux</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">Docker</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
                                     <span class="skill-name">AWS</span>
-                                    <span class="skill-experience">1年</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="skill-category p-4 h-100">
+                                <div class="category-title mb-3">開発ツール</div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">VSCode</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">Visual Studio</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="skill-item d-flex justify-content-between align-items-center">
                                     <span class="skill-name">Git</span>
-                                    <span class="skill-experience">実用レベル</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">Jupyter Notebook</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="skill-category p-4 h-100">
+                                <div class="category-title mb-3">その他</div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">GAS</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">Blender</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item d-flex justify-content-between align-items-center">
+                                    <span class="skill-name">RaspberryPi</span>
+                                    <div class="d-flex align-items-center">
+                                      <div class="skill-rating">
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                      </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -257,6 +257,13 @@
             font-weight: bold;
         }
 
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
         @media (max-width: 768px) {
             #aboutme {
                 padding: 30px 20px;
@@ -890,7 +897,7 @@
             </a>
           </strong><br/>
           the 9th International Conference on Virtual and Augmented Reality Simulations (ICVARS 2025)<br/>
-          微分可能パーティクルフィルタに基づいて、複数のボディトラッキング手法を統合する手法を提案しました。<br/>
+          微分可能パーティクルフィルタに基づいて、複数のボディトラッキング手法を統合する手法を提案しました。
           XR環境においてデータセットを構築し、身体動作を高精度かつリアルタイムに推定できることを示しました。<br/>
         </li>
         <li style="margin-bottom: 1.5rem;">
@@ -900,7 +907,7 @@
             </a>
           </strong><br/>
           Applied Sciences, vol. 14, no. 1, 2024<br/>
-          ダンスのパフォーマンス分析のためのデータセットを作成し、模範演技を基準とした相対評価モデルを提案しました。<br/>
+          ダンスのパフォーマンス分析のためのデータセットを作成し、模範演技を基準とした相対評価モデルを提案しました。
           提案手法が、ダンスの動作を客観的かつ高精度に評価・フィードバック可能であることを示しました。<br/>
         </li>        
         <li style="margin-bottom: 1.5rem;">
@@ -917,27 +924,38 @@
 
     <!-- ツール・プロジェクト -->
     <section id="others" class="mt-5" style="max-width: 1200px;">
-      <h2>その他の作成したツール・プロジェクト</h2>
+      <h2>その他の制作物・ツール</h2>
       <div class="row justify-content-center">
         <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
         <div class="col-md-10">
-          <img src="assets/images/tools/typing-game.png" class="img-fluid mb-2" alt="ツール画像" />
-          <p><strong>タイピングゲーム</strong><br/>
-          小学生向けの実践的なタイピングゲームを作成しました。Pythonの基礎文法に加え、EV3やpybrickなどの応用問題も作成できます。<br/>
-          <div class="d-flex flex-wrap gap-3 mt-3 mb-3">
-            <a href="https://kazuhiro1999.github.io/python-typing-game" class="btn btn-outline-primary" target="_blank">Webアプリ</a>            
-            <a href="https://github.com/kazuhiro1999/python-typing-game" class="btn btn-outline-secondary" target="_blank">GitHub</a>
+          <p style="font-size: 1.5rem; font-weight: bold;">MemoryJourney</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Unity</span>
+            <span class="badge bg-secondary me-1">C#</span>
+            <span class="badge bg-secondary me-1">Photon</span>
           </div>
+          <img src="assets/images/tools/MemoryJourney-2.jpg" class="img-fluid mb-2" alt="ツール画像" />
+          すごろくをベースにしたUnityゲームで、家族や恋人と思い出を振り返りながら追体験することをコンセプトとしています。ゲームロジックに加え、オンライン対応など複数の技術を組み合わせて開発しました。<br/> 
         </div>
 
         <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
         <div class="col-md-10">
-          <img src="assets/images/tools/programming-quiz.jpg" class="img-fluid mb-2" alt="ツール画像" />
-          <p><strong>プログラムクイズゲーム</strong><br/>
-          pythonを用いたev3プログラミングの学習用アプリです。エラー内容をフィードバックしたり、GPTを用いたヒントの提供ができます。<br/>
+          <p style="font-size: 1.5rem; font-weight: bold;">プログラミングクイズ</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">React</span>
+            <span class="badge bg-secondary me-1">TypeScript</span>
+            <span class="badge bg-secondary me-1">Flask</span>
+            <span class="badge bg-secondary me-1">GPT-4o-mini</span>
+          </div>
+          <img src="assets/images/tools/quiz.png" class="img-fluid mb-2" alt="ツール画像" />
+          pythonプログラミングの学習用アプリです。エラー内容をフィードバックしたり、GPTを用いたヒントの提供ができます。<br/>
           <br/>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Python</span>
+            <span class="badge bg-secondary me-1">Mediapipe</span>
+          </div>
           <img src="assets/images/tools/concentration-level-estimation.gif" class="img-fluid mb-2" alt="ツール画像" /><br/>
-          クイズ中の自分の集中状態や眠気を数値化し、可視化する事ができます。<br/>
+          まばたきから自分の集中状態や眠気を数値化し、可視化する事ができます。<br/>
           <div class="d-flex flex-wrap gap-3 mt-3 mb-3">           
             <a href="https://github.com/kazuhiro1999/EV3-programming-quiz" class="btn btn-outline-secondary" target="_blank">GitHub</a>
           </div>
@@ -945,9 +963,44 @@
 
         <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
         <div class="col-md-10">
+          <p style="font-size: 1.5rem; font-weight: bold;">タイピングゲーム</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">HTML/CSS</span>
+            <span class="badge bg-secondary me-1">JavaScript</span>
+          </div>
+          <img src="assets/images/tools/typing-game.png" class="img-fluid mb-2" alt="ツール画像" />
+          小学生向けの実践的なタイピングゲームを作成しました。Pythonの基礎文法に加え、EV3やpybrickなどの応用問題も作成できます。<br/>
+          <div class="d-flex flex-wrap gap-3 mt-3 mb-3">
+            <a href="https://kazuhiro1999.github.io/python-typing-game" class="btn btn-outline-primary" target="_blank">Webアプリ</a>            
+            <a href="https://github.com/kazuhiro1999/python-typing-game" class="btn btn-outline-secondary" target="_blank">GitHub</a>
+          </div>
+        </div>  
+        
+        <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
+        <div class="col-md-10">
+          <p style="font-size: 1.5rem; font-weight: bold;">雑談グラフ</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">HTML/CSS</span>
+            <span class="badge bg-secondary me-1">JavaScript</span>
+            <span class="badge bg-secondary me-1">Flask</span>
+            <span class="badge bg-secondary me-1">Whisper</span>
+            <span class="badge bg-secondary me-1">GPT-4o-mini</span>
+            <span class="badge bg-secondary me-1">AWS</span>
+          </div>
+          <img src="assets/images/tools/chat-graph.png" class="img-fluid mb-2" alt="LINEスクリーンショット" style="max-height: 500px; object-fit: contain;" />
+          雑談の内容を録音してリアルタイムで会話の流れを可視化するWebアプリを作成しました。APIを活用して話者識別や文字起こし、要約を行い、リアルタイムでグラフを更新します。差分を利用してグラフ操作を行う部分を工夫しました。<br/>
+        </div>
+
+        <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
+        <div class="col-md-10">
+          <p style="font-size: 1.5rem; font-weight: bold;">おぼえるくん</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">LINE Messaging API</span>
+            <span class="badge bg-secondary me-1">Google Apps Script</span>
+            <span class="badge bg-secondary me-1">Google Spread Sheet</span>
+          </div>
           <img src="assets/images/tools/おぼえるくん.jpg" class="img-fluid mb-2" alt="LINEスクリーンショット" style="max-height: 500px; object-fit: contain;" />
-          <p><strong>おぼえるくん</strong><br/>
-          LINE Messaging API+GASで共有メモアプリを作成しました。行きたい所、やりたい事をメモし、恋人や家族と共有することができます。<br/>
+          <p>LINE Messaging API+GASで共有メモアプリを作成しました。行きたい所、やりたい事をメモし、恋人や家族と共有することができます。</p><br/>
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@
             min-height: 100vh;
         }
 
-        #aboutme, #research, #publications, #others {
+        #aboutme {
             max-width: 1200px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
@@ -302,7 +302,9 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#aboutme">About me</a></li>
           <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#publications">Papers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
           <li class="nav-item"><a class="nav-link" href="#others">Others</a></li>
         </ul>
       </div>
@@ -885,6 +887,37 @@
       </div>
     </section>
 
+    <!-- 研究プロジェクト -->
+    <section id="projects" class="mt-5" style="max-width: 1200px;">
+      <h2>プロジェクト</h2>
+      <div class="row justify-content-center">
+        <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
+        <div class="col-md-10">
+          <p style="font-size: 1.5rem; font-weight: bold;">XR講義システム</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Unity</span>
+            <span class="badge bg-secondary me-1">XR</span>
+            <span class="badge bg-secondary me-1">Quest3</span>
+            <span class="badge bg-secondary me-1">Pico4</span>
+          </div>
+          <img src="assets/images/projects/VRAcademyEnterprise.png" class="img-fluid mb-2" alt="画像" />
+          XR空間でアバターやスライドを用いて講義コンテンツを作成・視聴するシステムです。
+          主に機能の追加やメンテナンス、バグ修正を担当しており、PC版は実際に大学内の講義で運用しています。<br/> 
+        </div>
+
+        <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
+        <div class="col-md-10">
+          <p style="font-size: 1.5rem; font-weight: bold;">XRロボットアーム訓練システム</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Unity</span>
+            <span class="badge bg-secondary me-1">Photon</span>
+          </div>
+          <img src="assets/images/projects/MetaWorkingLaboratory.jpg" class="img-fluid mb-2" alt="画像" />
+          研究機関との共同開発として携わっており、工場現場におけるロボットアームの遠隔操作をXR空間でトレーニングするシステムの設計・開発を担当しています。<br/>
+        </div>
+      </div>
+    </section>
+
     <!-- 論文 -->
     <section id="publications" class="mt-5" style="max-width: 1200px;">
       <h2>論文一覧</h2>
@@ -892,7 +925,7 @@
       <ul>
         <li style="margin-bottom: 1.5rem;">
           <strong>
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.icvars.org/2025.html" target="_blank" rel="noopener noreferrer">
             Deep Latent Space Based Data Assimilation Method for Integrating Multiple Body Tracking Techniques for Immersive XR Applications
             </a>
           </strong><br/>
@@ -922,6 +955,29 @@
       </ul>
     </section>
 
+    <!-- 受賞歴 -->
+    <section id="awards" class="mt-5" style="max-width: 1200px;">
+      <h2>受賞歴</h2>
+      <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
+      <ul>
+        <li style="margin-bottom: 1.5rem;">
+          <strong>学生奨励賞</strong><br/>
+          第86回情報処理学会 (2024年3月) にて、学生奨励賞を受賞しました。<br/>
+          <a href="https://www.i.nagoya-u.ac.jp/情報処理学会より第86回全国大会学生奨励賞を受賞/" target="_blank" rel="noopener noreferrer">
+            https://www.i.nagoya-u.ac.jp/情報処理学会より第86回全国大会学生奨励賞を受賞/
+          </a><br/>
+        </li>
+        <li style="margin-bottom: 1.5rem;">
+          <strong>学生が選ぶ優秀賞・教員が選ぶ優秀賞</strong><br/>
+          学内の中間発表会 (2025年4月)にて、学生が選ぶ優秀賞と教員が選ぶ優秀賞を受賞しました。<br/>
+        </li>
+        <li style="margin-bottom: 1.5rem;">
+          <strong>博士支援プログラム採択</strong><br/>
+          2025年度に博士支援プログラムに採択されました。<br/>
+        </li>
+      </ul>
+    </section>
+
     <!-- ツール・プロジェクト -->
     <section id="others" class="mt-5" style="max-width: 1200px;">
       <h2>その他の制作物・ツール</h2>
@@ -935,7 +991,7 @@
             <span class="badge bg-secondary me-1">Photon</span>
           </div>
           <img src="assets/images/tools/MemoryJourney-2.jpg" class="img-fluid mb-2" alt="ツール画像" />
-          すごろくをベースにしたUnityゲームで、家族や恋人と思い出を振り返りながら追体験することをコンセプトとしています。ゲームロジックに加え、オンライン対応など複数の技術を組み合わせて開発しました。<br/> 
+          すごろくをベースにしたUnityゲームで、家族や恋人と思い出を振り返りながら追体験することをコンセプトとしています。ゲームロジックに加え、オンライン対応など複数の技術を組み合わせて開発しました。個人制作です。<br/> 
         </div>
 
         <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
@@ -948,7 +1004,7 @@
             <span class="badge bg-secondary me-1">GPT-4o-mini</span>
           </div>
           <img src="assets/images/tools/quiz.png" class="img-fluid mb-2" alt="ツール画像" />
-          pythonプログラミングの学習用アプリです。エラー内容をフィードバックしたり、GPTを用いたヒントの提供ができます。<br/>
+          pythonプログラミングの学習用アプリです。エラー内容をフィードバックしたり、GPTを用いたヒントの提供ができます。個人制作で、アルバイト先のプログラミング教室に導入予定です。<br/>
           <br/>
           <div class="mb-3">
             <span class="badge bg-secondary me-1">Python</span>
@@ -988,7 +1044,7 @@
             <span class="badge bg-secondary me-1">AWS</span>
           </div>
           <img src="assets/images/tools/chat-graph.png" class="img-fluid mb-2" alt="LINEスクリーンショット" style="max-height: 500px; object-fit: contain;" />
-          雑談の内容を録音してリアルタイムで会話の流れを可視化するWebアプリを作成しました。APIを活用して話者識別や文字起こし、要約を行い、リアルタイムでグラフを更新します。差分を利用してグラフ操作を行う部分を工夫しました。<br/>
+          雑談の内容を録音してリアルタイムで会話の流れを可視化するWebアプリを作成しました。APIを活用して話者識別や文字起こし、要約を行い、リアルタイムでグラフを更新します。主にバックエンドの処理を担当し、差分を利用してグラフ操作を行う部分を工夫しました。<br/>
         </div>
 
         <hr style="border-top: 2px solid #ccc; margin: 3rem 0;" />
@@ -1000,7 +1056,7 @@
             <span class="badge bg-secondary me-1">Google Spread Sheet</span>
           </div>
           <img src="assets/images/tools/おぼえるくん.jpg" class="img-fluid mb-2" alt="LINEスクリーンショット" style="max-height: 500px; object-fit: contain;" />
-          <p>LINE Messaging API+GASで共有メモアプリを作成しました。行きたい所、やりたい事をメモし、恋人や家族と共有することができます。</p><br/>
+          <p>LINE Messaging API+GASで共有メモアプリを作成しました。行きたい所、やりたい事をメモし、恋人や家族と共有することができます。SpreadSheetとの連携や基幹部分の実装を担当しました。</p><br/>
         </div>
       </div>
     </section>

@@ -65,6 +65,11 @@
             text-align: center;
         }
 
+        .intro-subtitle {
+            margin-top: 30px; 
+            margin-bottom: 40px;
+        }
+
         .intro-text {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -73,8 +78,33 @@
             color: #666;
         }
 
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .profile-img {
+          width: 100%;
+          max-width: 240px;
+          height: auto;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 4px solid #fff;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-img:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
         .skills-section {
             margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .skills-title {
@@ -95,13 +125,6 @@
             height: 2px;
             background: #667eea;
             border-radius: 1px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
         }
 
         .skill-category {
@@ -125,12 +148,10 @@
         }
 
         .skill-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 12px;
             padding: 8px 0;
             border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            cursor: pointer;
         }
 
         .skill-item:last-child {
@@ -150,6 +171,7 @@
             border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 500;
+            margin-left: 8px;
         }
 
         .skill-rating {
@@ -167,18 +189,82 @@
             color: #ddd;
         }
 
-        .highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .expand-icon {
+            color: #667eea;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            margin-left: 8px;
+        }
+
+        .skill-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .skill-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-details.show {
+            max-height: 500px;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+
+        .detail-section {
+            margin-bottom: 10px;
+        }
+
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-label {
             font-weight: 600;
+            color: #667eea;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .detail-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 4px 0 0 0;
+        }
+
+        .detail-list li {
+            color: #666;
+            font-size: 0.9rem;
+            padding: 3px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .detail-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
             #aboutme {
                 padding: 30px 20px;
                 margin: 20px 10px;
+            }
+
+            .profile-img {
+              max-width: 150px; /* 小さい画面では小さく */
             }
 
             h2 {
@@ -220,292 +306,479 @@
 
     <!-- 自己紹介 -->
     <div class="container-fluid py-5">
-        <section id="aboutme" class="aboutme-section mx-auto p-5" style="max-width: 1200px;">
-            <h2 class="section-title text-center mb-4">About me</h2>
-            <div class="col-md-10 mx-auto">
+      <section id="aboutme" class="aboutme-section mx-auto p-5" style="max-width: 1200px;">
+        <h2 class="section-title text-center mb-4">About me</h2>          
+          <div class="col-md-10 mx-auto">
+            <div class="about-image text-center">
+              <img src="assets/images/profile.png" alt="Kazuhiro Esaki" class="profile-img shadow-lg">
+            </div>
                 <h4 class="intro-subtitle text-center mb-4">AI・XR研究者 | 博士課程在籍中</h4>
                 
                 <div class="intro-text mb-5">
-                    <p class="mb-3">名古屋大学大学情報学研究科の博士課程に在籍し、<span class="highlight">AIとXR技術</span>の研究開発に取り組んでいます。特に<span class="highlight">コンピュータビジョン、センシング技術、行動解析</span>を専門分野とし、人間の行動を認識・分析するシステムの開発を行っています。</p>
+                    <p class="mb-3">
+                      名古屋大学大学院情報学研究科の博士課程に在籍し、
+                      <span class="highlight">AIとXR技術</span>を組み合わせた教育・トレーニングシステムの研究開発に取り組んでいます。
+                      特に<span class="highlight">コンピュータビジョン、3Dアバター表現、行動解析AI</span>を専門とし、
+                      AIによるフィードバックを活用した没入型の学習体験を生み出すことを目指しています。
+                    </p>
                     
-                    <p class="mb-3">研究では、機械学習とコンピュータビジョンを組み合わせたボディトラッキングや行動分析技術の開発に注力しており、実世界での応用を見据えた実用的なソリューションの創出を目指しています。また、XR技術を活用したインタラクティブなアプリケーション開発にも豊富な経験を持ち、技術の社会実装に向けたアプローチを心がけています。</p>
-                    
-                    <p class="mb-0">研究室内の様々なプロジェクトに参加し、研究開発からプロトタイプ作成、実装まで一貫して手がけることができます。今年度からは国際的な共同研究も予定しており、学術的な知見と実践的なスキルを融合させたソリューションの開発に取り組んでいます。</p>
+                    <p class="mb-3">
+                      様々なプロジェクトに参加し、研究開発やシステムの設計・実装まで幅広く担当してきました。
+                      スタートアップ企業でのプロダクト開発の経験もあり、技術を社会実装するアプローチを探求しています。
+                      論文投稿や発表に加え、国際交流やイベントにも積極的に参加し、学術的な知見と実践的なスキルを兼ね備えた人材を目指しています。
+                    </p>                      
                 </div>
 
                 <div class="skills-section">
-                    <h3 class="skills-title text-center mb-4">技術スキル・開発経験</h3>
+        <h3 class="skills-title text-center mb-4">技術スキル・開発経験</h3>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="skill-category p-4 h-100">
+                    <div class="category-title mb-3">プログラミング言語</div>
                     
-                    <div class="row g-4">
-                        <div class="col-lg-4">
-                            <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">プログラミング言語</div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Python</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">C#</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">HTML/CSS</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">JavaScript</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>                                
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Python</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">7年</span>
+                                <span class="expand-icon">▼</span>
                             </div>
                         </div>
-
-                        <div class="col-lg-4">
-                            <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">機械学習</div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Tensorflow</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Numpy,Matplotlib</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">OpenCV</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">scikit-learn</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>                                
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>機械学習モデルの開発・実装</li>
+                                    <li>データ分析・各種ツールの作成</li>
+                                    <li>バックエンド開発</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <div class="detail-label">主な使用ライブラリ</div>
+                                <div class="detail-text">NumPy, TensorFlow, scikit-learn, pandas, Mediapipe, Flask</div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4">
-                            <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">XR・アプリ開発</div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Unity</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">OpenXR/SteamVR</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Photon</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">WebXR</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">C#</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">7年</span>
+                                <span class="expand-icon">▼</span>
                             </div>
                         </div>
-
-                        <div class="col-lg-4">
-                            <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">Web・インフラ</div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Flask</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Linux</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Docker</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">AWS</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>Windowsアプリ開発</li>
+                                    <li>Unityでのゲーム開発</li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4">
-                            <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">開発ツール</div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">VSCode</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Visual Studio</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Git</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Jupyter Notebook</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">3年</span>
+                                <span class="expand-icon">▼</span>
                             </div>
                         </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>Webアプリのフロントエンド実装</li>
+                                    <li>アニメーション</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="col-lg-4">
-                            <div class="skill-category p-4 h-100">
-                                <div class="category-title mb-3">その他</div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">GAS</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">Blender</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item d-flex justify-content-between align-items-center">
-                                    <span class="skill-name">RaspberryPi</span>
-                                    <div class="d-flex align-items-center">
-                                      <div class="skill-rating">
-                                        <span class="star">★</span>
-                                        <span class="star empty">☆</span>
-                                        <span class="star empty">☆</span>
-                                      </div>
-                                    </div>
-                                </div>
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">GAS</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">3年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>Line Messaging APIと連携したサーバーサイド開発</li>
+                                    <li>飲食店の予約受付システムの開発</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="skill-category p-4 h-100">
+                    <div class="category-title mb-3">XR・アプリ開発</div>
+                    
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Unity</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">7年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>XRアプリケーション開発</li>
+                                    <li>エディタ拡張などのツール作成</li>
+                                    <li>3Dアバターの表現(LipSyncなど)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">OpenXR/SteamVR</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">5年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>Pico4やQuest3向けのスタンドアロン開発</li>
+                                    <li>トラッカー情報の取得</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Photon</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">3年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>マルチプレイ対応</li>
+                                    <li>3Dアバターやオブジェクトの同期</li>
+                                    <li>チャットや通話機能</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="col-lg-4">
+                <div class="skill-category p-4 h-100">
+                    <div class="category-title mb-3">AI・コンピュータビジョン</div>
+                    
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Tensorflow</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">5年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>深層学習モデルの構築・学習</li>
+                                    <li>アーキテクチャや損失関数のカスタマイズ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Pytorch</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">1年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>最新の論文の追実験</li>
+                                    <li>モデルの構築・学習</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Numpy, Scipy</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">5年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>データの前処理</li>
+                                    <li>3次元再構成</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">OpenCV</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">4年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>背景除去やノイズ除去などの画像処理</li>
+                                    <li>カメラキャリブレーション</li>
+                                    <li>3次元再構成</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="skill-category p-4 h-100">
+                    <div class="category-title mb-3">Web・インフラ</div>
+                    
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">React/Typescript</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">1年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>小テスト用Webアプリの開発</li>
+                                    <li>Youtubeショーツ自動生成ツールの開発</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">4年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>フロントエンドUI開発</li>
+                                    <li>動画アノテーションツール</li>
+                                    <li>ポートフォリオ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Flask</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">4年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>バックエンド開発</li>
+                                    <li>API設計</li>
+                                    <li>データベース設計(MySQL)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Linux/Docker</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">5年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>機械学習環境の構築</li>
+                                    <li>コンテナの管理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="skill-category p-4 h-100">
+                    <div class="category-title mb-3">開発ツール</div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Git/Github</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">4年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>研究室内のプロジェクト管理</li>
+                                    <li>データセットや学習モデルの公開</li>
+                                    <li>ツールの管理・公開</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">VSCode</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">7年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>python開発</li>
+                                    <li>バックエンド開発</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Visual Studio</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">4年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>Unity開発</li>
+                                    <li>Windowsアプリ開発</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Blender</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">2年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>3Dアバター作成</li>
+                                    <li>モデリング</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="skill-category p-4 h-100">
+                    <div class="category-title mb-3">その他</div>
+                    
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">AWS</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">1年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>Web版アプリのデプロイ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" onclick="toggleDetails(this)">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="skill-name">Raspberry Pi</span>
+                            <div class="d-flex align-items-center">
+                                <span class="skill-experience">2年</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-details">
+                            <div class="detail-section">
+                                <div class="detail-label">使用用途</div>
+                                <ul class="detail-list">
+                                    <li>簡易的な会話ボットの作成</li>
+                                    <li>カメラを使用した人物の識別</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- 研究内容 -->
@@ -516,15 +789,14 @@
         <div class="col-md-10">
           <h4>#1 XRダンストレーニングシステム</h4>
           <p><b>「理想のダンスをマスターするための次世代トレーニングシステム。AIとXR技術の融合で、いつでもどこでも専属コーチがあなたの練習をサポート。」</b><br/>
-            XRとAIの最新技術を活用し、ダンスの練習を支援する次世代トレーニングシステムの開発に取り組みました。<br/>
-            システム開発に加え、実用化を目指してサーバー開発やボディトラッキング技術の改良などを行っております。</p>
+            私が主に取り組んでいる研究テーマです。学部時代から開発をはじめ、地元のダンススクールと連携して試行錯誤を重ね、2025年夏に製品化しました。</p>
           <div class="d-flex flex-wrap gap-3 mt-3 mb-3">
             <a href="" class="btn btn-outline-primary" target="_blank">Webサイト</a>
             <a href="https://doi.org/10.1162/pres_a_00383" class="btn btn-outline-secondary" target="_blank">論文1</a>
             <a href="https://doi.org/10.3390/app14145981" class="btn btn-outline-success" target="_blank">論文2</a>
           </div>
           <div class="ratio ratio-16x9 mb-3">
-            <iframe src="https://www.youtube.com/embed/_OdYbjXQ0BM" title="XR Dance Academy" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/XvA4bC-kxqk" title="XR Dance Academy" allowfullscreen></iframe>
           </div>  
           <div class="row text-center mb-5">
             <div class="col-md-4">
@@ -564,9 +836,8 @@
         <!-- 2つ目 -->
         <div class="col-md-10">
           <h4>#2 ダンスの自動評価とフィードバック生成</h4>
-          <p>この研究ではダンスモーションの自動評価とユーザーフィードバックの生成について取り組みました。<br/>
-            ダンスは動きに正解がないことから、手本動作を基準とした相対評価のフレームワークを提案しました。<br/>
-            タスクの設計からデータ収集、深層学習モデルの構築、学習・評価まで全体を通して研究に貢献しました。</p>
+          <p>システムの要素技術として、ダンスモーションの自動評価とユーザーフィードバックの生成に取り組みました。<br/>
+            ダンスは動きに正解がないことから、手本動作を基準とした相対評価のフレームワークを提案し、タスクの設計からデータ収集、学習モデルの構築、学習・評価まで全体を通して研究に貢献しました。</p>
           <div class="d-flex flex-wrap gap-3 mt-3 mb-3">
             <a href="https://github.com/kazuhiro1999/Automatic-Evaluation-of-Dance-Movements" class="btn btn-outline-primary" target="_blank">GitHub</a>
             <a href="https://doi.org/10.3390/app14145981" class="btn btn-outline-secondary" target="_blank">論文</a>
@@ -585,11 +856,12 @@
         <!-- 3つ目 -->
         <div class="col-md-10">
           <h4>#3 ボディトラッキングデータの融合</h4>
-          <p>この研究では、複数のデータソースを深層学習ベースで融合するフレームワークを提案しました。<br>
-            状態推定モデルに深層学習を組み込んだ「微分可能パーティクルフィルタ」の枠組みをベースとし、タスクに合わせて独自にモデルを拡張しました。</p>
+          <p>もう一つの要素技術として、リアルタイムボディトラッキングに取り組みました。<br>
+            この研究では、ヘッドセット内蔵のセンサーと外部カメラ映像から得られるデータを深層学習ベースで融合するフレームワークを提案しました。
+            先行研究のモデルをタスクに合わせて拡張し、リアルタイムでの高精度な全身トラッキングを目指しました。</p>
           <div class="d-flex flex-wrap gap-3 mt-3 mb-3">
             <a href="https://github.com/kazuhiro1999/data-assimilation" class="btn btn-outline-primary" target="_blank">GitHub</a>
-            <a href="https://www.icvars.org/index.html" class="btn btn-outline-secondary" target="_blank">論文</a>
+            <a href="https://www.icvars.org/2025.html" class="btn btn-outline-secondary" target="_blank">論文</a>
           </div>
           <video controls width="100%">
             <source src="assets/videos/demonstration_video_en.mp4" type="video/mp4" />
@@ -613,12 +885,13 @@
       <ul>
         <li style="margin-bottom: 1.5rem;">
           <strong>
-            <a href="https://doi.org/10.1162/pres_a_00383" target="_blank" rel="noopener noreferrer">
-            VR Dance Training System Capable of Human Motion Tracking and Automatic Dance Evaluation
+            <a href="" target="_blank" rel="noopener noreferrer">
+            Deep Latent Space Based Data Assimilation Method for Integrating Multiple Body Tracking Techniques for Immersive XR Applications
             </a>
           </strong><br/>
-          PRESENCE: Virtual and Augmented Reality, vol. 31, pp. 23-45, 1 Dec. 2022<br/>
-          マルチカメラによる3次元姿勢推定と、対照学習を用いたダンスの自動評価を実現したVRダンストレーニングシステムを開発しました。<br/>
+          the 9th International Conference on Virtual and Augmented Reality Simulations (ICVARS 2025)<br/>
+          微分可能パーティクルフィルタに基づいて、複数のボディトラッキング手法を統合する手法を提案しました。<br/>
+          XR環境においてデータセットを構築し、身体動作を高精度かつリアルタイムに推定できることを示しました。<br/>
         </li>
         <li style="margin-bottom: 1.5rem;">
           <strong>
@@ -629,16 +902,15 @@
           Applied Sciences, vol. 14, no. 1, 2024<br/>
           ダンスのパフォーマンス分析のためのデータセットを作成し、模範演技を基準とした相対評価モデルを提案しました。<br/>
           提案手法が、ダンスの動作を客観的かつ高精度に評価・フィードバック可能であることを示しました。<br/>
-        </li>
+        </li>        
         <li style="margin-bottom: 1.5rem;">
           <strong>
-            <a href="https://www.icvars.org/index.html" target="_blank" rel="noopener noreferrer">
-            Deep Latent Space Based Data Assimilation Method for Integrating Multiple Body Tracking Techniques for Immersive XR Applications
+            <a href="https://doi.org/10.1162/pres_a_00383" target="_blank" rel="noopener noreferrer">
+            VR Dance Training System Capable of Human Motion Tracking and Automatic Dance Evaluation
             </a>
           </strong><br/>
-          To be presented at the 9th International Conference on Virtual and Augmented Reality Simulations (ICVARS 2025)<br/>
-          微分可能パーティクルフィルタに基づいて、複数のボディトラッキング手法を統合する手法を提案しました。<br/>
-          XR環境において独自でデータセットを構築し、身体動作を高精度かつリアルタイムに推定できることを示しました。<br/>
+          PRESENCE: Virtual and Augmented Reality, vol. 31, pp. 23-45, 1 Dec. 2022<br/>
+          マルチカメラによる3次元姿勢推定と、対照学習を用いたダンスの自動評価を実現したVRダンストレーニングシステムを開発しました。<br/>
         </li>
       </ul>
     </section>
@@ -703,6 +975,28 @@
     function updateModalImage(src, caption) {
       document.getElementById('modalImage').src = src;
       document.getElementById('modalCaption').textContent = caption;
+    }
+
+    function toggleDetails(element) {
+      const details = element.querySelector('.skill-details');
+      const isExpanded = element.classList.contains('expanded');
+            
+      // 他の開いている項目を閉じる
+      document.querySelectorAll('.skill-item.expanded').forEach(item => {
+        if (item !== element) {
+          item.classList.remove('expanded');
+          item.querySelector('.skill-details').classList.remove('show');
+        }
+      });
+            
+      // クリックされた項目をトグル
+      if (isExpanded) {
+        element.classList.remove('expanded');
+        details.classList.remove('show');
+      } else {
+        element.classList.add('expanded');
+        details.classList.add('show');
+      }   
     }
   </script>
 </body>
